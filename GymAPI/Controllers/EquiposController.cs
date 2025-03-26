@@ -1,11 +1,14 @@
 ﻿using GymAPI.Interfaces;
 using GymAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GymAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Authorize] // 👈 Protege todos los endpoints
+    
+    [Route("api/[controller]")]
     public class EquiposController : ControllerBase
     {
         private readonly IEquipoRepository _equipoRepository;
