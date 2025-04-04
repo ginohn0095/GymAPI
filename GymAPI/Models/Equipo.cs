@@ -8,5 +8,10 @@
         public int ProveedorID { get; set; }
         public string? Estado { get; set; }
         public DateTime FechaCompra { get; set; }
+
+        internal static object Select(Func<object, object> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

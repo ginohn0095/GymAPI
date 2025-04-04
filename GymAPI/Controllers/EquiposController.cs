@@ -1,4 +1,5 @@
-﻿using GymAPI.Interfaces;
+﻿using Asp.Versioning;
+using GymAPI.Interfaces;
 using GymAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -6,8 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace GymAPI.Controllers
 {
     [ApiController]
-    [Authorize] // 👈 Protege todos los endpoints
-    
+    [Authorize(Roles = "Admin")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/equipos")]
+
     [Route("api/[controller]")]
     public class EquiposController : ControllerBase
     {
